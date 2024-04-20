@@ -25,15 +25,18 @@ b2 = input("Are you using the Base Bonus 2x Luck? [answer no if you said yes to 
 if b2:
     base *= 2
     lb *= 2
-
+hp1 = input("Are you using a Heavenly Potion 1? [input no if youre using a heavenly 2] ").lower() in ['yes', 'y', 'true']
+if hp1:
+    base += 20000
+hp2 = input("Are you using Heavenly Potion 2? ").lower() in ['yes', 'y', 'true']
+if hp2:
+    base += 200000
 # Calculate aura value
 aura_value = (base + lb) * ayw
 
 # Set minimum and maximum limits for aura rarity
 minn = 0.000000000000001
 maxn = 1
-
-# Ensure aura_value is within the specified range
 result = max(minn, min(aura_value, maxn))
 
 # hope and pray to god it works
